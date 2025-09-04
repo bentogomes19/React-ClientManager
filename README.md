@@ -1,6 +1,6 @@
 # ClientManager
 
-ClientManager é um sistema web para cadastro, visualização, edição e exclusão de clientes, desenvolvido com **C# .NET** no backend e **React + Tailwind CSS** no frontend. O projeto utiliza uma arquitetura **layered**, com separação clara entre API, serviços e frontend, e faz integração via requisições HTTP usando **Axios**.
+ClientManager é a interface web para cadastro, visualização, edição e exclusão de clientes, desenvolvida com **React + Tailwind CSS**. Este projeto **consome uma API separada**, que deve estar rodando em outro servidor.
 
 ---
 
