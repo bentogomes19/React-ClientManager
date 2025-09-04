@@ -18,6 +18,7 @@ export default function ClienteForm() {
     cpf: "",
     dataNascimento: "",
     rendaFamiliar: 0,
+    dataDeCadastro: new Date().toISOString().split("T")[0],
   });
 
   const [loading, setLoading] = useState(false);
@@ -60,8 +61,12 @@ export default function ClienteForm() {
         alert("Cliente criado com sucesso!");
       }
       navigate("/clientes");
-    } catch (ex) {
-      alert(`Erro ao salvar cliente: ${ex}`);
+    } catch (ex: any) {
+      if (ex.response?.data?.Message) {
+        alert(ex.response.data.Message);
+      } else {
+        alert(`Erro ao salvar cliente: ${ex.message || ex}`);
+      }
     } finally {
       setLoading(false);
     }
@@ -182,6 +187,27 @@ export default function ClienteForm() {
               step={0.01}
               placeholder="Ex: 2500.50"
               className="form-input w-full border border rounded-md "
+              style={{ padding: "5px 10px", border: "1px solid #ccc" }}
+            />
+          </div>
+
+          <div
+            className="w-full max-w-[250px]"
+            style={{ width: "100%", maxWidth: "250px" }}
+          >
+            <label
+              htmlFor="dataDeCadastro"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Data de Cadastro
+            </label>
+            <input
+              type="date"
+              id="dataDeCadastro"
+              value={cliente.dataDeCadastro ?? ""}
+              onChange={(e) => handleChange("dataDeCadastro", e.target.value)}
+              readOnly // se você quiser apenas exibir, sem permitir edição
+              className="form-input w-full border border rounded-md bg-gray-100 text-gray-700 cursor-not-allowed"
               style={{ padding: "5px 10px", border: "1px solid #ccc" }}
             />
           </div>

@@ -4,6 +4,7 @@ export interface ClienteTypeDto {
   cpf?: string; 
   dataNascimento: string; 
   rendaFamiliar: number;
+  dataDeCadastro?: string;
 }
 
 export interface ClienteFilterDto {

@@ -4,54 +4,64 @@ ClientManager é um sistema web para cadastro, visualização, edição e exclus
 
 ---
 
-## Funcionalidades
+## Finalidade
 
-- **Cadastro de clientes** com validação de CPF.
-- **Listagem de clientes** cadastrados.
-- **Exclusão de clientes** com atualização automática da lista.
-- **Máscara de CPF** enquanto digita.
-- **Validações HTML5** em todos os campos do formulário (required, maxLength, min, step, pattern, etc).
-- **Estilização** moderna usando Tailwind CSS e CSS personalizado.
-
----
+Este é um passo a passo para realizar a instalação das dependências.
 
 ## Tecnologias Utilizadas
 
-**Backend:**
-- C# .NET 8
-- ASP.NET Web API
-- Arquitetura Layered (Controllers, Services, Repositories)
-- Validação de CPF e regras de negócio
-
-**Frontend:**
-- React
+- React + Vite
 - Axios para consumo da API
-- Tailwind CSS e CSS personalizado
-
-**Outras:**
-- JSON como formato de dados
-- VS Code / Visual Studio
-- NPM / Node.js
+- Tailwind CSS
 
 ---
 
----
+## 📂 Estrutura de pastas
+
+```bash
+client/
+├─ public/
+│  └─ logo.svg                # Logo do projeto
+├─ src/
+│  ├─ layouts/                # Componentes de layout (ex: header, sidebar)
+│  ├─ pages/                  # Páginas do sistema (ex: Dashboard, Clientes)
+│  ├─ routes/                 # Configuração de rotas do React Router
+│  ├─ services/               # Serviços para comunicação com a API (axios, fetch)
+│  ├─ types/                  # Tipagens TypeScript (DTOs, interfaces)
+│  ├─ utils/                  # Funções utilitárias (ex: formatação de CPF)
+│  ├─ index.css               # Estilos globais
+│  ├─ main.tsx                # Ponto de entrada do React
+├─ .gitignore                 # Arquivos/pastas ignorados pelo Git
+├─ package.json               # Configuração do Node e dependências
+├─ tailwind.config.js         # Configuração do Tailwind CSS
+├─ postcss.config.js          # Configuração PostCSS
+├─ vite.config.js             # Configuração do Vite
+└─ README.md                  # Este arquivo
+```
+
+## Pré-requisitos
+
+- [Node.js](https://nodejs.org/dist/v22.19.0/node-v22.19.0-x64.msi)
+- [Git](https://git-scm.com/downloads/win)
 
 ## Instalação
 
-### Backend
+1. Clone o repositório:
 
-1. Abra a pasta `backend` no Visual Studio.
-2. Restaure os pacotes NuGet.
-3. Configure a conexão com o banco de dados no `appsettings.json`.
-4. Execute a aplicação (`F5` ou `Ctrl+F5`).
+```bash
+git clone https://github.com/bentogomes19/React-ClientManager.git
+cd ClientManager
+```
 
-### Frontend
-
-1. Abra a pasta `frontend` no terminal.
 2. Instale as dependências:
 
 ```bash
 npm install
+```
 
+3. Execute o projeto localmente:
 
+```bash
+npm run dev
+# App em http://localhost:5173
+```

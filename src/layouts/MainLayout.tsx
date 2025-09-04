@@ -83,7 +83,7 @@ export default function Layout({ children }: Props) {
             <Link
               to="/relatorios"
               onClick={toggleSidebarMobile}
-              className="w-[90%] h-10 md:h-12 flex items-center justify-center rounded-lg hover:bg-sky-50 transition-colors duration-200 gap-3 px-4 text-white"
+              className="w-[90%] h-10 md:h-12 flex items-center justify-center rounded-lg hover:bg-sky-800 transition-colors duration-200 gap-3 px-4 text-white"
             >
               <ChartNoAxesCombined style={{ fontSize: 20 }} />
               {(isSidebarOpen || isMobile) && "Relatórios"}
@@ -92,7 +92,7 @@ export default function Layout({ children }: Props) {
             <Link
               to="/clientes"
               onClick={toggleSidebarMobile}
-              className="w-[90%] h-10 md:h-12 flex items-center justify-center rounded-lg hover:bg-sky-50 transition-colors duration-200 gap-3 px-4 text-white"
+              className="w-[90%] h-10 md:h-12 flex items-center justify-center rounded-lg hover:bg-sky-800 transition-colors duration-200 gap-3 px-4 text-white"
             >
               <Users style={{ fontSize: 20 }} />
               {(isSidebarOpen || isMobile) && "Clientes"}

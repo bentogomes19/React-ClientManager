@@ -27,8 +27,22 @@ export async function updateCliente(
       dto
     );
     return response.data;
-  } catch (error) {
-    throw error;
+  } catch (error: any) {
+    if (error.response?.data) {
+      const data = error.response.data;
+
+      if (data.message) {
+        throw new Error(data.message);
+      }
+      if (data.errors) {
+        const mensagens = Object.values(data.errors).flat().join("\n");
+        throw new Error(mensagens);
+      }
+
+      throw new Error(JSON.stringify(data));
+    }
+
+    throw new Error(error.message || "Erro desconhecido");
   }
 }
 
