@@ -1,17 +1,20 @@
-import axios, { AxiosInstance } from 'axios';
-import { ApiResponse, ApiResponseTable } from '../types';
+import axios, { AxiosInstance } from "axios";
+import { ApiResponse, ApiResponseTable } from "../types";
 
 export class ApiClient {
+  static get<T, U>() {
+    throw new Error("Method not implemented.");
+  }
   private static instance: ApiClient;
   private axiosInstance: AxiosInstance;
   private readonly timeout = 30000;
 
   private constructor() {
     this.axiosInstance = axios.create({
-      baseURL: 'http://localhost:5156/api/',
+      baseURL: "http://localhost:5156/api/",
       timeout: this.timeout,
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
   }

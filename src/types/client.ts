@@ -1,16 +1,14 @@
-export interface CreateClienteDto {
+export interface ClienteTypeDto {
+  id?: string; 
   nome: string;
   cpf?: string; 
   dataNascimento: string; 
   rendaFamiliar: number;
 }
 
-export interface UpdateClienteDto extends CreateClienteDto { }
-
-export interface ClienteResponseDto {
-  id: string; 
-  nome: string;
-  cpf: string;
-  dataNascimento: string; 
-  rendaFamiliar: number;
+export interface ClienteFilterDto {
+  name?: string;
+  cpf?: string;
+  offset?: number;
+  pageSize?: number;
 }
